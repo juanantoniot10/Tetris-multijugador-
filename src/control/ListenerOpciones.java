@@ -5,9 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import modelo.Juego;
 import vista.ConfigurarTeclas;
 import vista.PanelOpciones;
 import vista.panelColorFiguras;
@@ -26,20 +28,62 @@ public class ListenerOpciones implements ActionListener{
 	private PanelOpciones panelOpciones;
 	private panelTamanhoTablero panelTamanhoTablero;
 	private JPanel panelNombreOpciones;
+	private Juego juego;
+	private JLabel nivel;
+	private JLabel puntos;
+	private JLabel tamanioTablero;
+	private Iniciador iniciador = new Iniciador();
+	private ListenerNivel listenerNivel ;
+	private ListenerTamanioTablero listenerTamanioTablero ;
+	private ListenerColorFondo listenerColorFondo;
 	
 	
-	
-	public ListenerOpciones(JPanel panelPrincipal, JPanel panelPuntuacion,PanelOpciones panelOpciones) {
+	public ListenerOpciones(JPanel panelPrincipal, JPanel panelPuntuacion,PanelOpciones panelOpciones, JLabel nivelImagen, JLabel puntos, JLabel tamanioTablero) {
 		super();
 		this.panelPrincipal = panelPrincipal;
 		this.panelPuntuacion = panelPuntuacion;
 		this.panelOpciones = panelOpciones;
+		this.panelNombreOpciones = this.panelOpciones.getPanelNombreOpcion();
+		this.nivel = nivelImagen;
+		this.puntos = puntos;
+		this.tamanioTablero=tamanioTablero;
 		this.configurarTeclas = new ConfigurarTeclas();
 		this.panelColorFiguras = new panelColorFiguras();
+		
 		this.panelElegirColorFondo =  new panelElegirColorFondo();
+		this.listenerColorFondo = new ListenerColorFondo(this.panelPrincipal.getParent());
+		ponerListenersPanelColor(this.panelElegirColorFondo,this.listenerColorFondo);
+		
 		this.panelElegirNivel = new panelElegirNivel();
+		this.listenerNivel= new ListenerNivel(nivel);
+		ponerListenersPanel(this.panelElegirNivel,this.listenerNivel);
+		
 		this.panelTamanhoTablero = new panelTamanhoTablero();
-		this.panelNombreOpciones = this.panelOpciones.getPanelNombreOpcion();
+		this.listenerTamanioTablero = new ListenerTamanioTablero(this.tamanioTablero,this.iniciador);
+		ponerListenersPanel(this.panelTamanhoTablero,this.listenerTamanioTablero);
+		
+	}
+
+
+
+	private void ponerListenersPanelColor(JPanel panelElegirColorFondo,ListenerColorFondo listenerColorFondo) {
+		for (int i = 0; i < panelElegirColorFondo.getComponentCount(); i++) {
+			for (int j = 0; j < ((JPanel)panelElegirColorFondo.getComponent(i)).getComponentCount(); j++) {
+				((JButton)((JPanel)panelElegirColorFondo.getComponent(i)).getComponent(j)).addActionListener(listenerColorFondo);
+			}
+		}
+		
+	}
+
+
+
+	/**
+	 * 
+	 */
+	private void ponerListenersPanel(JPanel panel,ActionListener listener) {
+		for (int i = 0; i < panel.getComponentCount(); i++) {
+			((JButton)panel.getComponent(i)).addActionListener(listener);
+		}
 	}
 
 
@@ -52,6 +96,7 @@ public class ListenerOpciones implements ActionListener{
 			this.panelOpciones.removeAll();
 			this.panelOpciones.add(panelNombreOpciones,BorderLayout.WEST);
 			this.panelOpciones.add(panelElegirNivel,BorderLayout.CENTER);
+			
 			SwingUtilities.updateComponentTreeUI(panelPrincipal);
 			break;
 		case "Tamaño tablero":

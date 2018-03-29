@@ -17,8 +17,9 @@ import java.awt.Component;
 public class VistaPrincipal extends JFrame{
 	protected JPanel panelPrincipal;
 	protected JPanel panelPuntuacion;
-	private JLabel nivelImagen;
-	private JLabel puntos;
+	protected JLabel nivelImagen;
+	protected JLabel puntos;
+	protected JLabel tamanioTablero;
 	public VistaPrincipal() {
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -97,6 +98,25 @@ public class VistaPrincipal extends JFrame{
 		puntos.setForeground(Color.LIGHT_GRAY);
 		puntos.setFont(new Font("Tahoma", Font.BOLD, 16));
 		panelPuntuacion.add(puntos);
+		
+		JLabel tamanoTablero = new JLabel("Tama\u00F1o del tablero");
+		tamanoTablero.setPreferredSize(new Dimension(200, 14));
+		tamanoTablero.setMaximumSize(new Dimension(445, 44));
+		tamanoTablero.setHorizontalTextPosition(SwingConstants.CENTER);
+		tamanoTablero.setHorizontalAlignment(SwingConstants.CENTER);
+		tamanoTablero.setForeground(Color.LIGHT_GRAY);
+		tamanoTablero.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(tamanoTablero);
+		
+		tamanioTablero = new JLabel("Clasico 10x20");
+		tamanioTablero.setPreferredSize(new Dimension(200, 14));
+		tamanioTablero.setMinimumSize(new Dimension(65, 14));
+		tamanioTablero.setMaximumSize(new Dimension(445, 44));
+		tamanioTablero.setHorizontalTextPosition(SwingConstants.CENTER);
+		tamanioTablero.setHorizontalAlignment(SwingConstants.CENTER);
+		tamanioTablero.setForeground(Color.LIGHT_GRAY);
+		tamanioTablero.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(tamanioTablero);
 	}
 	
 }
