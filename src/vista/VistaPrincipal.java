@@ -15,8 +15,10 @@ import java.awt.SystemColor;
 import java.awt.Component;
 
 public class VistaPrincipal extends JFrame{
-	private JPanel panelPrincipal;
-	private JPanel panelPuntuacion;
+	protected JPanel panelPrincipal;
+	protected JPanel panelPuntuacion;
+	private JLabel nivelImagen;
+	private JLabel puntos;
 	public VistaPrincipal() {
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -39,13 +41,62 @@ public class VistaPrincipal extends JFrame{
 		panelPrincipal.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLUE, SystemColor.textHighlight, SystemColor.activeCaption, Color.BLUE));
 		panelPrincipal.setBackground(Color.BLACK);
 		getContentPane().add(panelPrincipal, BorderLayout.CENTER);
-		panelPrincipal.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.X_AXIS));
 		
 		panelPuntuacion = new JPanel();
 		panelPuntuacion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GREEN, new Color(50, 205, 50), new Color(124, 252, 0), new Color(154, 205, 50)));
 		panelPuntuacion.setBackground(Color.BLACK);
 		getContentPane().add(panelPuntuacion, BorderLayout.EAST);
-		panelPuntuacion.setLayout(new BoxLayout(panelPuntuacion, BoxLayout.X_AXIS));
+		panelPuntuacion.setLayout(new BoxLayout(panelPuntuacion, BoxLayout.Y_AXIS));
+		
+		JLabel jugador1 = new JLabel("Jugador1");
+		jugador1.setMinimumSize(new Dimension(65, 14));
+		jugador1.setPreferredSize(new Dimension(200, 14));
+		jugador1.setHorizontalAlignment(SwingConstants.CENTER);
+		jugador1.setHorizontalTextPosition(SwingConstants.CENTER);
+		jugador1.setMaximumSize(new Dimension(445, 44));
+		jugador1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		jugador1.setForeground(Color.LIGHT_GRAY);
+		panelPuntuacion.add(jugador1);
+		
+		JLabel nivel = new JLabel("nivel");
+		nivel.setPreferredSize(new Dimension(200, 14));
+		nivel.setMinimumSize(new Dimension(65, 14));
+		nivel.setMaximumSize(new Dimension(445, 44));
+		nivel.setHorizontalTextPosition(SwingConstants.CENTER);
+		nivel.setHorizontalAlignment(SwingConstants.CENTER);
+		nivel.setForeground(Color.LIGHT_GRAY);
+		nivel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(nivel);
+		
+		nivelImagen = new JLabel("1");
+		nivelImagen.setMinimumSize(new Dimension(65, 14));
+		nivelImagen.setPreferredSize(new Dimension(200, 14));
+		nivelImagen.setMaximumSize(new Dimension(445, 44));
+		nivelImagen.setHorizontalTextPosition(SwingConstants.CENTER);
+		nivelImagen.setHorizontalAlignment(SwingConstants.CENTER);
+		nivelImagen.setForeground(Color.LIGHT_GRAY);
+		nivelImagen.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(nivelImagen);
+		
+		JLabel puntuacion = new JLabel("  Puntuacion  ");
+		puntuacion.setPreferredSize(new Dimension(200, 14));
+		puntuacion.setMaximumSize(new Dimension(445, 44));
+		puntuacion.setHorizontalTextPosition(SwingConstants.CENTER);
+		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
+		puntuacion.setForeground(Color.LIGHT_GRAY);
+		puntuacion.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(puntuacion);
+		
+		puntos = new JLabel("0");
+		puntos.setPreferredSize(new Dimension(200, 14));
+		puntos.setMinimumSize(new Dimension(65, 14));
+		puntos.setMaximumSize(new Dimension(445, 44));
+		puntos.setHorizontalTextPosition(SwingConstants.CENTER);
+		puntos.setHorizontalAlignment(SwingConstants.CENTER);
+		puntos.setForeground(Color.LIGHT_GRAY);
+		puntos.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panelPuntuacion.add(puntos);
 	}
 	
 }

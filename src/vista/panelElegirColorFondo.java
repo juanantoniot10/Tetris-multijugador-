@@ -19,6 +19,7 @@ public class panelElegirColorFondo extends JPanel{
 	private JButton amarillo;
 	private JButton rosa;
 	private JButton gris;
+	private JButton negro;
 	public panelElegirColorFondo() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
@@ -42,6 +43,26 @@ public class panelElegirColorFondo extends JPanel{
 		cyan.setFont(new Font("Pristina", Font.BOLD, 25));
 		add(cyan);
 		
+		azul = new JButton("azul");
+		azul.setBackground(Color.BLUE);
+		azul.setName("5");
+		azul.setMinimumSize(new Dimension(43, 23));
+		azul.setMaximumSize(new Dimension(2220, 400));
+		azul.setMargin(new Insets(20, 20, 20, 20));
+		azul.setHorizontalTextPosition(SwingConstants.LEADING);
+		azul.setFont(new Font("Pristina", Font.BOLD, 25));
+		add(azul);
+		
+		amarillo = new JButton("amarillo");
+		amarillo.setBackground(Color.YELLOW);
+		amarillo.setName("7");
+		amarillo.setMinimumSize(new Dimension(43, 23));
+		amarillo.setMaximumSize(new Dimension(2220, 400));
+		amarillo.setMargin(new Insets(20, 20, 20, 20));
+		amarillo.setHorizontalTextPosition(SwingConstants.LEADING);
+		amarillo.setFont(new Font("Pristina", Font.BOLD, 25));
+		add(amarillo);
+		
 		naranja = new JButton("naranja");
 		naranja.setBackground(Color.ORANGE);
 		naranja.setName("3");
@@ -62,16 +83,6 @@ public class panelElegirColorFondo extends JPanel{
 		rojo.setFont(new Font("Pristina", Font.BOLD, 25));
 		add(rojo);
 		
-		azul = new JButton("azul");
-		azul.setBackground(Color.BLUE);
-		azul.setName("5");
-		azul.setMinimumSize(new Dimension(43, 23));
-		azul.setMaximumSize(new Dimension(2220, 400));
-		azul.setMargin(new Insets(20, 20, 20, 20));
-		azul.setHorizontalTextPosition(SwingConstants.LEADING);
-		azul.setFont(new Font("Pristina", Font.BOLD, 25));
-		add(azul);
-		
 		magenta = new JButton("magenta");
 		magenta.setBackground(Color.MAGENTA);
 		magenta.setName("6");
@@ -81,16 +92,6 @@ public class panelElegirColorFondo extends JPanel{
 		magenta.setHorizontalTextPosition(SwingConstants.LEADING);
 		magenta.setFont(new Font("Pristina", Font.BOLD, 24));
 		add(magenta);
-		
-		amarillo = new JButton("amarillo");
-		amarillo.setBackground(Color.YELLOW);
-		amarillo.setName("7");
-		amarillo.setMinimumSize(new Dimension(43, 23));
-		amarillo.setMaximumSize(new Dimension(2220, 400));
-		amarillo.setMargin(new Insets(20, 20, 20, 20));
-		amarillo.setHorizontalTextPosition(SwingConstants.LEADING);
-		amarillo.setFont(new Font("Pristina", Font.BOLD, 25));
-		add(amarillo);
 		
 		rosa = new JButton("rosa");
 		rosa.setBackground(Color.PINK);
@@ -111,6 +112,16 @@ public class panelElegirColorFondo extends JPanel{
 		gris.setHorizontalTextPosition(SwingConstants.LEADING);
 		gris.setFont(new Font("Pristina", Font.BOLD, 24));
 		add(gris);
+		
+		negro = new JButton("negro");
+		negro.setName("9");
+		negro.setMinimumSize(new Dimension(43, 23));
+		negro.setMaximumSize(new Dimension(2220, 400));
+		negro.setMargin(new Insets(20, 20, 20, 20));
+		negro.setHorizontalTextPosition(SwingConstants.LEADING);
+		negro.setFont(new Font("Pristina", Font.BOLD, 24));
+		negro.setBackground(Color.BLACK);
+		add(negro);
 	}
 	
 }

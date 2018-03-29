@@ -19,9 +19,9 @@ public class panelElegirNivel extends JPanel{
 	private JButton nivel7;
 	private JButton nivel8;
 	private JButton nivel9;
+	
 	public panelElegirNivel() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		
 		nivel1 = new JButton("nivel 1");
 		nivel1.setBackground(Color.GREEN);
 		nivel1.setName("1");
