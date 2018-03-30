@@ -8,8 +8,10 @@ public class Iniciador {
 	private int columnas;
 	
 	
-	public void Iniciar(int filas,int columnas) {
+	public Iniciador (int filas,int columnas) {
 		this.setTablero(new Tablero(filas, columnas));
+		this.filas=filas;
+		this.columnas=columnas;
 	}
 
 	public Tablero getTablero() {

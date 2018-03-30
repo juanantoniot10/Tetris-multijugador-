@@ -15,6 +15,7 @@ import vista.PanelOpciones;
 import vista.panelColorFiguras;
 import vista.panelElegirColorFondo;
 import vista.panelElegirNivel;
+import vista.panelJuego;
 import vista.panelTamanhoTablero;
 
 public class ListenerOpciones implements ActionListener{
@@ -27,12 +28,13 @@ public class ListenerOpciones implements ActionListener{
 	private panelElegirNivel panelElegirNivel;
 	private PanelOpciones panelOpciones;
 	private panelTamanhoTablero panelTamanhoTablero;
+	private panelJuego panelJuego;
 	private JPanel panelNombreOpciones;
 	private Juego juego;
 	private JLabel nivel;
 	private JLabel puntos;
 	private JLabel tamanioTablero;
-	private Iniciador iniciador = new Iniciador();
+	private Iniciador iniciador;
 	private ListenerNivel listenerNivel ;
 	private ListenerTamanioTablero listenerTamanioTablero ;
 	private ListenerColorFondo listenerColorFondo;
@@ -49,6 +51,7 @@ public class ListenerOpciones implements ActionListener{
 		this.tamanioTablero=tamanioTablero;
 		this.configurarTeclas = new ConfigurarTeclas();
 		this.panelColorFiguras = new panelColorFiguras();
+		this.iniciador = new Iniciador(10, 20);
 		
 		this.panelElegirColorFondo =  new panelElegirColorFondo();
 		this.listenerColorFondo = new ListenerColorFondo(this.panelPrincipal.getParent());
@@ -62,6 +65,7 @@ public class ListenerOpciones implements ActionListener{
 		this.listenerTamanioTablero = new ListenerTamanioTablero(this.tamanioTablero,this.iniciador);
 		ponerListenersPanel(this.panelTamanhoTablero,this.listenerTamanioTablero);
 		
+		this.panelJuego = new panelJuego(this.iniciador.getFilas(), this.iniciador.getColumnas());
 	}
 
 
@@ -96,7 +100,6 @@ public class ListenerOpciones implements ActionListener{
 			this.panelOpciones.removeAll();
 			this.panelOpciones.add(panelNombreOpciones,BorderLayout.WEST);
 			this.panelOpciones.add(panelElegirNivel,BorderLayout.CENTER);
-			
 			SwingUtilities.updateComponentTreeUI(panelPrincipal);
 			break;
 		case "Tamaño tablero":
@@ -124,8 +127,9 @@ public class ListenerOpciones implements ActionListener{
 			SwingUtilities.updateComponentTreeUI(panelPrincipal);
 			break;
 		case "INICIAR JUEGO":
-			
-		default:
+			this.panelOpciones.removeAll();
+			this.panelOpciones.add(panelJuego,BorderLayout.CENTER);
+			SwingUtilities.updateComponentTreeUI(panelPrincipal);
 			break;
 		}
 	}
