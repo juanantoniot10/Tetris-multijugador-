@@ -4,6 +4,7 @@ public class Casilla {
 	private boolean ocupada = false;
 	private int posicionX;
 	private int posicionY;
+	private CuadradoParaPieza cuadradoParaPieza;
 	
 	public Casilla(int posicionX, int posicionY) {
 		super();
@@ -27,5 +28,11 @@ public class Casilla {
 	}
 	public void setPosicionY(int posicionY) {
 		this.posicionY = posicionY;
+	}
+	public CuadradoParaPieza getCuadradoParaPieza() {
+		return cuadradoParaPieza;
+	}
+	public void setCuadradoParaPieza(CuadradoParaPieza cuadradoParaPieza) {
+		this.cuadradoParaPieza = cuadradoParaPieza;
 	}
 }
