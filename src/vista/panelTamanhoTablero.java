@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import java.awt.Color;
 
-public class panelTamanhoTablero extends JPanel{
+public class PanelTamanhoTablero extends JPanel{
 	private JButton clasico;
 	private JButton pequenho;
 	private JButton grande;
@@ -17,7 +17,7 @@ public class panelTamanhoTablero extends JPanel{
 	private JButton cuadrado;
 	private JButton alargado;
 	private JButton aleatorio;
-	public panelTamanhoTablero() {
+	public PanelTamanhoTablero() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		clasico = new JButton("clasico 10x20");

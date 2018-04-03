@@ -9,9 +9,9 @@ public class Iniciador {
 	
 	
 	public Iniciador (int filas,int columnas) {
-		this.setTablero(new Tablero(filas, columnas));
 		this.filas=filas;
 		this.columnas=columnas;
+		this.setTablero(new Tablero(filas, columnas));
 	}
 
 	public Tablero getTablero() {

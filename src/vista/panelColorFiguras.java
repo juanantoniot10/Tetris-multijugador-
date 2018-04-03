@@ -10,9 +10,9 @@ import javax.swing.BoxLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-public class panelColorFiguras extends JPanel{
+public class PanelColorFiguras extends JPanel{
 
-	public panelColorFiguras() {
+	public PanelColorFiguras() {
 		setBackground(new Color(255, 218, 185));
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		

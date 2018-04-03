@@ -1,24 +1,28 @@
 package modelo;
 
 public abstract class Pieza {
-	private CuadradoParaPieza cuadrados[][];
+	private CuadradoParaPieza cuadrados[];
 	private boolean activa;
 	
 	public abstract void cambiarFormaPieza();
 	
-	public void moverPieza(int lateral,int vertical) {
+	public void moverPieza(int lateral,int vertical,long tiempo) {
+		try {
+			Thread.sleep(tiempo);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for (int i = 0; i < this.cuadrados.length; i++) {
-			for (int j = 0; j < this.cuadrados[i].length; j++) {
-				this.cuadrados[i][j].desplazarCuadrado(lateral, vertical);
-			}
+			this.cuadrados[i].desplazarCuadrado(lateral, vertical);
 		}
 	}
 	
 	
-	public CuadradoParaPieza[][] getCuadrados() {
+	public CuadradoParaPieza[] getCuadrados() {
 		return cuadrados;
 	}
-	public void setCuadrados(CuadradoParaPieza[][] cuadrados) {
+	public void setCuadrados(CuadradoParaPieza[] cuadrados) {
 		this.cuadrados = cuadrados;
 	}
 	public boolean isActiva() {

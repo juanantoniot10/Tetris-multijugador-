@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import java.awt.Color;
 
-public class panelElegirNivel extends JPanel{
+public class PanelElegirNivel extends JPanel{
 	private JButton nivel1;
 	private JButton nivel2;
 	private JButton nivel3;
@@ -20,7 +20,7 @@ public class panelElegirNivel extends JPanel{
 	private JButton nivel8;
 	private JButton nivel9;
 	
-	public panelElegirNivel() {
+	public PanelElegirNivel() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		nivel1 = new JButton("nivel 1");
 		nivel1.setBackground(Color.GREEN);

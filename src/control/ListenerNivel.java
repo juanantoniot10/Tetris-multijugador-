@@ -6,15 +6,18 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import modelo.Puntuacion;
 import modelo.Tablero;
 
 public class ListenerNivel implements ActionListener{
 	
 	private JLabel nivel;
+	private Puntuacion puntuacion;
 	
-	public ListenerNivel(JLabel nivel) {
+	public ListenerNivel(JLabel nivel,Puntuacion puntuacion) {
 		super();
 		this.nivel = nivel;
+		this.puntuacion = puntuacion;
 	}
 	
 
@@ -22,6 +25,8 @@ public class ListenerNivel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.nivel.setText(obtenerNumeroNivel(((JButton)e.getSource())));
+		this.puntuacion.setNivel(Integer.valueOf(((JButton)e.getSource()).getName()));
+		this.puntuacion.setPuntuacion(0);
 	}
 	
 	

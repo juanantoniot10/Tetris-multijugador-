@@ -10,10 +10,10 @@ import javax.swing.BoxLayout;
 import java.awt.Color;
 import javax.swing.JSplitPane;
 
-public class panelElegirColorFondo extends JPanel{
+public class PanelElegirColorFondo extends JPanel{
 	private JButton button_10;
 	private JButton button_11;
-	public panelElegirColorFondo() {
+	public PanelElegirColorFondo() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
 		JPanel panel = new JPanel();
